@@ -1,0 +1,26 @@
+{
+  "name": "jahirul-portfolio",
+  "version": "3.0.0",
+  "description": "Md Jahirul Islam - Python Backend Developer Portfolio",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next export"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "next": "^13.4.12",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "eslint-config-next": "^13.4.12"
+  },
+  "engines": {
+    "node": "16.x || 18.x || 20.x"
+  }
+}
