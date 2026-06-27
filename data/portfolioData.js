@@ -34,7 +34,7 @@ export const skillsData = {
     },
     {
       name: "Frameworks & Libraries",
-      items: ["FastAPI", "Django", "Tortoise ORM", "Celery", "WebSocket", "Pydantic"],
+      items: ["FastAPI", "Django", "Tortoise ORM", "Celery", "WebSocket"],
     },
     {
       name: "Databases",
@@ -97,7 +97,7 @@ export const projectsData = {
         "Integrated Razorpay & Cashfree for payments, refunds, vendor dashboards",
         "Automated push notifications via Celery, APScheduler & Firebase FCM; AI chatbot",
       ],
-      link: "https://github.com/jahir010",
+      link: "https://github.com/jahir010/quikle",
     },
     {
       id: 2,
@@ -111,7 +111,7 @@ export const projectsData = {
         "Stripe integration for payments, commission deduction, automated payouts",
         "Real-time notifications via WebSockets, Firebase FCM, WhatsApp/email",
       ],
-      link: "https://github.com/jahir010",
+      link: "https://github.com/jahir010/petdoor_usa",
     },
     {
       id: 3,
@@ -139,7 +139,7 @@ export const projectsData = {
         "Hierarchical document library with nested folders & multi-format support",
         "Automated DB backups, activity logging, global search, email notifications",
       ],
-      link: "https://github.com/jahir010",
+      link: "https://github.com/jahir010/passarinhama_v2",
     },
   ],
 };
@@ -183,7 +183,7 @@ export const certificatesData = {
       duration: "26 hours",
       completedDate: "Nov 24, 2024",
       certificateId: "550,340",
-      link: "#",
+      link: "https://drive.google.com/file/d/11TAV5zk8RQiENF_-iPCr-EDTyyP8WMws/view?usp=sharing",
     },
     {
       title: "Associate Data Scientist in Python",
@@ -191,7 +191,7 @@ export const certificatesData = {
       duration: "90 hours",
       completedDate: "Nov 07, 2024",
       certificateId: "541,364",
-      link: "#",
+      link: "https://drive.google.com/file/d/1cTrMhS-J_4unNo7nwJBZKurVk8ixPtjp/view?usp=sharing",
     },
   ],
   achievement: {

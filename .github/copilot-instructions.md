@@ -55,6 +55,7 @@
 ## Next Steps
 
 ### To Run the Project:
+
 ```bash
 cd /media/jahir/Courses1/task\ project/portfolio
 npm install
@@ -64,11 +65,13 @@ npm run dev
 Then open http://localhost:3000
 
 ### To Deploy:
+
 - **Vercel**: Push to GitHub and connect repository
 - **AWS EC2**: Follow deployment guide in README.md
 - **Docker**: `docker-compose up -d`
 
 ### To Connect Backend:
+
 1. Update `.env.local` with backend API URL
 2. Follow `BACKEND_INTEGRATION.md`
 3. Uncomment API calls in `app/page.jsx`

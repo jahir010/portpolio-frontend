@@ -48,20 +48,24 @@ portfolio/
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js 18.x or higher
 - npm or yarn
 
 ### Installation
 
 1. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 2. **Run development server:**
+
    ```bash
    npm run dev
    ```
+
    Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 3. **Build for production:**
@@ -75,11 +79,13 @@ portfolio/
 ### Environment Variables
 
 Edit `.env.local` for development:
+
 ```env
 NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/api
 ```
 
 Edit `.env.production` for production:
+
 ```env
 NEXT_PUBLIC_API_BASE_URL=https://your-backend-api.com/api
 ```
@@ -87,6 +93,7 @@ NEXT_PUBLIC_API_BASE_URL=https://your-backend-api.com/api
 ### Update Portfolio Data
 
 Edit `data/portfolioData.js` to customize:
+
 - Personal information
 - Skills and technologies
 - Work experience
@@ -153,17 +160,20 @@ vercel
 ### Option 2: AWS EC2
 
 1. **SSH into your instance:**
+
    ```bash
    ssh -i your-key.pem ec2-user@your-instance-ip
    ```
 
 2. **Install Node.js:**
+
    ```bash
    curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo bash -
    sudo yum install -y nodejs
    ```
 
 3. **Clone and setup:**
+
    ```bash
    git clone https://github.com/jahir010/portfolio.git
    cd portfolio
@@ -172,6 +182,7 @@ vercel
    ```
 
 4. **Use PM2 to keep it running:**
+
    ```bash
    sudo npm install -g pm2
    pm2 start npm --name "portfolio" -- start
@@ -180,12 +191,14 @@ vercel
    ```
 
 5. **Set up Nginx reverse proxy:**
+
    ```bash
    sudo yum install -y nginx
    sudo systemctl start nginx
    ```
 
    Edit `/etc/nginx/nginx.conf`:
+
    ```nginx
    location / {
        proxy_pass http://localhost:3000;
@@ -212,7 +225,9 @@ docker-compose up -d
 ## 🎨 Customization
 
 ### Colors & Theme
+
 Edit CSS variables in `styles/globals.css`:
+
 ```css
 :root {
   --bg: #0a0b10;
@@ -224,7 +239,9 @@ Edit CSS variables in `styles/globals.css`:
 ```
 
 ### Terminal Commands
+
 Add new commands in `app/page.jsx` `handleCommand()` function:
+
 ```javascript
 case 'custom':
   newOutput = [
@@ -264,6 +281,7 @@ This project is open source and available under the MIT License.
 ## 📧 Support
 
 For questions or issues:
+
 - Email: jahirulislam92134@gmail.com
 - GitHub: [@jahir010](https://github.com/jahir010)
 - LinkedIn: [Md Jahirul Islam](https://www.linkedin.com/in/jahirul-islam-5b448a245/)

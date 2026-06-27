@@ -42,11 +42,13 @@ async def send_message(message: ContactForm):
 ### Step 1: Update Environment Variables
 
 In `.env.local`:
+
 ```env
 NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/api
 ```
 
 In `.env.production`:
+
 ```env
 NEXT_PUBLIC_API_BASE_URL=https://your-backend-api.com/api
 ```
@@ -62,7 +64,7 @@ import { portfolioAPI } from '@lib/api';
 // In your component, replace static data with API calls:
 const handleCommand = async (cmd) => {
   // ... command handling ...
-  
+
   case 'cat':
     if (target === 'skills') {
       // Fetch from backend instead of static data
@@ -76,6 +78,7 @@ const handleCommand = async (cmd) => {
 ## 📋 Expected API Response Format
 
 ### GET /api/about
+
 ```json
 {
   "name": "Md Jahirul Islam",
@@ -91,6 +94,7 @@ const handleCommand = async (cmd) => {
 ```
 
 ### GET /api/skills
+
 ```json
 {
   "categories": [
@@ -104,6 +108,7 @@ const handleCommand = async (cmd) => {
 ```
 
 ### GET /api/projects
+
 ```json
 {
   "projects": [
@@ -140,13 +145,14 @@ For protected endpoints, the frontend has built-in JWT support:
 
 ```javascript
 // In lib/apiClient.js, tokens are automatically added:
-const token = localStorage.getItem('token');
+const token = localStorage.getItem("token");
 if (token) {
   config.headers.Authorization = `Bearer ${token}`;
 }
 ```
 
 Backend should verify the JWT:
+
 ```python
 from fastapi import Depends, HTTPException
 from fastapi.security import HTTPBearer
@@ -162,11 +168,13 @@ async def protected_route():
 ## 🧪 Testing the Integration
 
 1. Start your FastAPI backend:
+
    ```bash
    uvicorn main:app --reload --port 8000
    ```
 
 2. Start the Next.js frontend:
+
    ```bash
    npm run dev
    # Open http://localhost:3000
@@ -180,16 +188,19 @@ async def protected_route():
 ## 🐛 Troubleshooting
 
 ### CORS Errors
+
 - Verify backend has CORS middleware
 - Check `allow_origins` includes your frontend URL
 - In development, use `*` temporarily for testing
 
 ### API Not Responding
+
 - Verify backend is running on port 8000
 - Check `NEXT_PUBLIC_API_BASE_URL` is correct
 - Look at browser Network tab for failed requests
 
 ### Authentication Issues
+
 - Ensure JWT token is stored in localStorage
 - Check token format: `Bearer <token>`
 - Verify backend validates token correctly
@@ -257,7 +268,7 @@ The `docker-compose.yml` file includes configuration for both frontend and backe
 services:
   frontend:
     # ... portfolio service
-  
+
   backend:
     build: ../your-backend-path
     ports:
@@ -266,13 +277,14 @@ services:
       - DATABASE_URL=postgresql://user:pass@db:5432/portfolio
     depends_on:
       - db
-  
+
   db:
     image: postgres:16-alpine
     # ... database configuration
 ```
 
 Then start both:
+
 ```bash
 docker-compose up -d
 ```
