@@ -272,6 +272,10 @@ export default function Home() {
                 text: `  ${cert.duration} · Completed ${cert.completedDate} · Certificate #${cert.certificateId}`,
                 className: 'out-dim',
             });
+            lines.push({
+                text: `  <a href="${cert.link}" target="_blank" class="term-link">🔗 View certificate</a>`,
+                className: '',
+            });
             lines.push({ text: '', className: '' });
         });
 
@@ -299,10 +303,10 @@ export default function Home() {
                         activeSection={currentSection}
                         onItemClick={handleSectionClick}
                         socialLinks={[
-                            { icon: 'github', url: 'https://github.com/jahir010' },
-                            { icon: 'linkedin-in', url: 'https://www.linkedin.com/in/jahirul-islam-5b448a245/' },
-                            { icon: 'envelope', url: 'mailto:jahirulislam92134@gmail.com' },
-                            { icon: 'phone-alt', url: 'tel:+8801521796083' },
+                            { icon: 'github', type: 'fab', url: 'https://github.com/jahir010' },
+                            { icon: 'linkedin-in', type: 'fab', url: 'https://www.linkedin.com/in/jahirul-islam-5b448a245/' },
+                            { icon: 'envelope', type: 'fas', url: 'mailto:jahirulislam92134@gmail.com' },
+                            { icon: 'phone-alt', type: 'fas', url: 'tel:+8801521796083' },
                         ]}
                     />
                     <Terminal initialContent={output} onCommand={handleCommand} />

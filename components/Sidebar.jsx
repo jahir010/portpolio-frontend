@@ -19,7 +19,7 @@ export const Sidebar = ({ items, activeSection, onItemClick, socialLinks }) => {
             <div className="sidebar-social">
                 {socialLinks.map((link) => (
                     <a key={link.icon} href={link.url} target="_blank" rel="noopener noreferrer">
-                        <i className={`fab fa-${link.icon}`}></i>
+                        <i className={`${link.type || 'fab'} fa-${link.icon}`}></i>
                     </a>
                 ))}
             </div>
