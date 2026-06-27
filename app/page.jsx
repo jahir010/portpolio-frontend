@@ -13,6 +13,7 @@ import {
     renderLs,
     renderError,
     renderResumeDownload,
+    renderNeofetch,
     createPromptLine,
     downloadResume,
 } from '@lib/terminalContent';
@@ -108,6 +109,63 @@ export default function Home() {
                 }
                 break;
 
+            case 'cd':
+                if (args.length === 0) {
+                    newOutput = [
+                        createPromptLine(cmd),
+                        ...renderError('cd requires a section name.'),
+                    ];
+                } else {
+                    const target = args[0].toLowerCase().replace('.py', '');
+                    const validSections = ['about', 'skills', 'experience', 'projects', 'education', 'certificates'];
+
+                    if (validSections.includes(target)) {
+                        setCurrentSection(target);
+                        newOutput = [
+                            createPromptLine(cmd),
+                            ...(target === 'about'
+                                ? renderAbout(portfolioData)
+                                : target === 'skills'
+                                ? renderSkills()
+                                : target === 'experience'
+                                ? renderExperience()
+                                : target === 'projects'
+                                ? renderProjects()
+                                : target === 'education'
+                                ? renderEducation()
+                                : renderCertificates()),
+                        ];
+                    } else {
+                        newOutput = [
+                            createPromptLine(cmd),
+                            ...renderError(`"${args[0]}" not found.`),
+                        ];
+                    }
+                }
+                break;
+
+            case 'skills':
+                if (args[0] === '--list') {
+                    newOutput = [createPromptLine(cmd), ...renderSkills()];
+                } else {
+                    newOutput = [
+                        createPromptLine(cmd),
+                        ...renderError('Unknown skills option. Use skills --list.'),
+                    ];
+                }
+                break;
+
+            case 'projects':
+                if (args[0] === '--list') {
+                    newOutput = [createPromptLine(cmd), ...renderProjects()];
+                } else {
+                    newOutput = [
+                        createPromptLine(cmd),
+                        ...renderError('Unknown projects option. Use projects --list.'),
+                    ];
+                }
+                break;
+
             case 'resume':
                 newOutput = [createPromptLine(cmd), ...renderResumeDownload()];
                 downloadResume();
@@ -115,6 +173,10 @@ export default function Home() {
 
             case 'clear':
                 newOutput = [];
+                break;
+
+            case 'neofetch':
+                newOutput = [createPromptLine(cmd), ...renderNeofetch()];
                 break;
 
             case 'whoami':
