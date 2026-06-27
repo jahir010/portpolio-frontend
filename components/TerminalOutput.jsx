@@ -5,7 +5,7 @@ export const TerminalOutput = ({ content }) => {
 
     useEffect(() => {
         if (outputRef.current) {
-            outputRef.current.scrollTop = outputRef.current.scrollHeight;
+            outputRef.current.scrollTop = 0;
         }
     }, [content]);
 
